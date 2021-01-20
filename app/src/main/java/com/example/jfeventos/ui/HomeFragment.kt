@@ -36,7 +36,6 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         viewModel.getEvents(requireActivity())
         setupObservers()
         mBinding.swipeRefresh.setOnRefreshListener(this)
-        setHasOptionsMenu(true)
     }
 
     private fun setupRecyclerView() {
