@@ -30,7 +30,7 @@ class EventAdapter(
             with(event){
                 binding.event = this
                 binding.eventDateView.bind(date)
-                binding.eventResumeView.bind(title, price).setCityStateEvent(context, longitude, latitude)
+                binding.eventResumeView.bind(title, price).setCityEvent(context, longitude, latitude)
             }
 
             binding.root.setOnClickListener {

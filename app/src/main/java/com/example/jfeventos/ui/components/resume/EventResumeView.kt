@@ -44,7 +44,7 @@ class EventResumeView @JvmOverloads constructor(
         priceEvent.text = "A partir de R$ $price"
     }
 
-    fun setCityStateEvent(context: Context, long: String, lat: String) = try {
+    fun setCityEvent(context: Context, long: String, lat: String) = try {
         val geocoder = Geocoder(context, getBrazilianLocation())
         val addresses = geocoder.getFromLocation(lat.toDouble(), long.toDouble(), 1)
         cityEvent.text = "${addresses[0].subAdminArea}"

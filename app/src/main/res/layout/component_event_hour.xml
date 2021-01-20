@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardviewxx"
+    android:layout_width="100dp"
+    android:layout_height="85dp"
+    app:cardCornerRadius="10dp"
+    app:layout_constraintEnd_toStartOf="@+id/cardview2"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toEndOf="@+id/cardview"
+    app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/imghour"
+            android:layout_width="16dp"
+            android:layout_height="18dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_hour" />
+
+        <TextView
+            android:id="@+id/hourEvent"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/imghour"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="11:00"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/colorBlack"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:background="#E35093"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="HORÁRIO"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
