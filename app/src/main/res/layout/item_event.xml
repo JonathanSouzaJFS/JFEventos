@@ -11,126 +11,139 @@
             type="com.example.jfeventos.model.Event" />
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="155dp">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardElevation="8dp"
+        app:cardPreventCornerOverlap="true">
 
-        <RelativeLayout
-            android:id="@+id/shape_layout"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/circle"
-            android:elevation="6dp"
-            app:layout_anchor="@id/cardView"
-            app:layout_anchorGravity="left|center">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv_photo"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                app:cardCornerRadius="35dp">
-
-                <ImageView
-                    android:id="@+id/imageEvent"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/placeholder"
-                    bind:picassoLoad="@{event.image}" />
-            </androidx.cardview.widget.CardView>
-        </RelativeLayout>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="5dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <ImageView
+                android:id="@+id/product_image"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent">
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder"
+                bind:picassoLoad="@{event.image}" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/titleEvent"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="42dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="16dp"
-                    android:textColor="@color/titleColor"
-                    android:textSize="21sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="@{event.title}" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:padding="8dp">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/descriptionEvent"
-                    android:layout_width="0dp"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardview"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@{event.description}"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/titleEvent"
-                    app:layout_constraintTop_toBottomOf="@+id/titleEvent" />
+                    android:layout_alignParentStart="true"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:text="SÁB"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="27"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textColor="#E35093"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#E35093"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="2dp"
+                                android:text="JUN"
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:id="@+id/component"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/cardview"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/eventCityState"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Manaus/AM"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textColor="#E35093"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/eventTitle"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Feira de Doaçao de Animais na Redenção"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        tools:text="@{event.title}" />
+
+                    <TextView
+                        android:id="@+id/eventPrice"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="A partir de R$ 00,00"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textColor="#E35093"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        tools:text="@{`A partir de R$ ` + event.price}" />
+
+                </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/iconCommentsEvent"
-                    android:layout_width="20dp"
+                    android:id="@+id/eventArrow"
+                    android:layout_width="22dp"
                     android:layout_height="20dp"
-                    android:layout_marginStart="42dp"
-                    android:layout_marginLeft="42dp"
-                    android:layout_marginBottom="24dp"
-                    android:src="@drawable/placeholder"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    android:layout_alignBottom="@id/cardview"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_arrow_to_right"
+                    android:textAppearance="?attr/textAppearanceBody2" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/commentsEvent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginLeft="40dp"
-                    android:text="@{event.date.toString()}"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/iconCommentsEvent"
-                    app:layout_constraintStart_toEndOf="@+id/iconCommentsEvent"
-                    app:layout_constraintTop_toTopOf="@+id/iconCommentsEvent" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/shareEvent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="42dp"
-                    android:layout_marginRight="42dp"
-                    android:text="SHARE"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/iconCommentsEvent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/iconCommentsEvent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 </layout>
