@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -9,6 +10,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        dataBinding = true
     }
     defaultConfig {
         applicationId "com.example.jfeventos"
@@ -64,4 +66,7 @@ dependencies {
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-androidx-scope:$koin_version"
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
