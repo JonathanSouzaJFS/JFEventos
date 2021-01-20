@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jfeventos.databinding.ItemEventBinding
 import com.example.jfeventos.model.Event
+import com.example.jfeventos.ui.components.date.EventDateView
 import kotlin.collections.ArrayList
 
 class EventAdapter(
@@ -27,6 +28,7 @@ class EventAdapter(
 
         fun bind(event: Event) {
             binding.event = event
+            binding.eventDateView.bind(event.date)
 
             binding.root.setOnClickListener {
                 onItemClickListener.invoke(event)

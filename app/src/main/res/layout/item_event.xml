@@ -38,58 +38,11 @@
                 android:background="@color/colorWhite"
                 android:padding="8dp">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardview"
-                    android:layout_width="100dp"
+                <com.example.jfeventos.ui.components.date.EventDateView
+                    android:id="@+id/eventDateView"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    app:cardCornerRadius="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/colorWhite"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:gravity="center"
-                            android:text="SÁB"
-                            android:textAppearance="?attr/textAppearanceHeadline6"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="27"
-                            android:textAppearance="?attr/textAppearanceHeadline6"
-                            android:textColor="#E35093"
-                            android:textSize="28sp"
-                            android:textStyle="bold" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#E35093"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:padding="2dp"
-                                android:text="JUN"
-                                android:textAppearance="?attr/textAppearanceHeadline6"
-                                android:textColor="@color/colorWhite"
-                                android:textSize="14sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                    android:layout_alignParentStart="true" />
 
                 <LinearLayout
                     android:id="@+id/component"
@@ -97,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="8dp"
-                    android:layout_toEndOf="@id/cardview"
+                    android:layout_toEndOf="@id/eventDateView"
                     android:orientation="vertical">
 
                     <TextView
@@ -136,7 +89,7 @@
                     android:id="@+id/eventArrow"
                     android:layout_width="22dp"
                     android:layout_height="20dp"
-                    android:layout_alignBottom="@id/cardview"
+                    android:layout_alignBottom="@id/eventDateView"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="8dp"
