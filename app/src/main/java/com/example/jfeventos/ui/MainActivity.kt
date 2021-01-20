@@ -1,4 +1,4 @@
-package com.example.jfeventos
+package com.example.jfeventos.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
+import com.example.jfeventos.R
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController

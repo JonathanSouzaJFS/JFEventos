@@ -1,6 +1,4 @@
-package br.com.listgistgithub.di
-
-import com.example.jfeventos.di.networkModule
+package com.example.jfeventos.di
 
 val appComponent = listOf(
     networkModule
