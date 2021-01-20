@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/component"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_toEndOf="@id/eventDateView"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/cityEvent"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Manaus/AM"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textColor="#E35093"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/titleEvent"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Feira de Doaçao de Animais na Redenção"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/priceEvent"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="A partir de R$ 20,00"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textColor="#E35093"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+</LinearLayout>

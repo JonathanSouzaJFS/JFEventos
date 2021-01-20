@@ -8,7 +8,7 @@ data class Event(
     val title: String = "",
     val description: String = "",
     val longitude: String = "",
-    val latitude: String? = "",
+    val latitude: String = "",
     val date: Long = -1,
     val price: BigDecimal = BigDecimal.ZERO
 )

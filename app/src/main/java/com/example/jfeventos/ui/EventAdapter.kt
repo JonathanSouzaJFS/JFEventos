@@ -27,8 +27,11 @@ class EventAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(event: Event) {
-            binding.event = event
-            binding.eventDateView.bind(event.date)
+            with(event){
+                binding.event = this
+                binding.eventDateView.bind(date)
+                binding.eventResumeView.bind(title, price).setCityStateEvent(context, longitude, latitude)
+            }
 
             binding.root.setOnClickListener {
                 onItemClickListener.invoke(event)
