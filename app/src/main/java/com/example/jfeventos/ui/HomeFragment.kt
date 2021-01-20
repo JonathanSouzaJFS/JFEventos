@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.jfeventos.databinding.FragmentHomeBinding
+import com.example.jfeventos.model.Event
 import com.example.jfeventos.utils.NetworkResponse
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -17,6 +18,7 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     private val viewModel by viewModel<HomeViewModel>()
     private lateinit var mBinding: FragmentHomeBinding
+    private lateinit var adapter: EventAdapter
     private var loading = false
 
     override fun onCreateView(
@@ -43,6 +45,10 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     }
 
     private fun setupRecyclerViewAdapter() {
+        adapter = EventAdapter(requireContext(), arrayListOf()) {
+
+        }
+        mBinding.recyclerViewEvents.adapter = adapter
     }
 
     private fun setupObservers() {
@@ -51,6 +57,7 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
                 when (resource) {
                     is NetworkResponse.Success -> {
                         mBinding.progressBar.visibility = View.GONE
+                        retrieveList(resource.data)
                         loading = false
                         mBinding.swipeRefresh.isRefreshing = false
                     }
@@ -69,6 +76,16 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         })
     }
 
+    private fun retrieveList(events: List<Event>) {
+        adapter.apply {
+            addEvent(events)
+            notifyDataSetChanged()
+        }
+    }
+
     override fun onRefresh() {
+        adapter.clearItems()
+        viewModel.getEvents(requireActivity())
+        setupObservers()
     }
 }
