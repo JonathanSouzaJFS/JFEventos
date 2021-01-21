@@ -7,7 +7,21 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.jfeventos.ui.HomeFragment"
+        android:name="com.example.jfeventos.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.jfeventos.ui.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="1L" />
+    </fragment>
 </navigation>

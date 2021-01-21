@@ -22,7 +22,6 @@ class EventLocaleView @JvmOverloads constructor(
     private val cityEvent: TextView
     private val stateEvent: TextView
 
-
     init {
         inflate(context, R.layout.component_event_locale, this)
         cityEvent = findViewById(R.id.cityEvent)

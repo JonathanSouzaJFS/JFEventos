@@ -23,18 +23,18 @@ class EventHourView @JvmOverloads constructor(
         hourEvent = findViewById(R.id.hourEvent)
     }
 
-    fun bind(date: String) {
+    fun bind(date: Long) {
         setHourEvent(date)
     }
 
-    private fun setHourEvent(date: String) = try {
+    private fun setHourEvent(date: Long) = try {
         hourEvent.text = convertDateFromPattern("hh:mm", date)
             .dropLast(1)
     } catch (e: Exception) {
         hourEvent.text = ""
     }
 
-    private fun convertDateFromPattern(pattern: String, date: String): String {
+    private fun convertDateFromPattern(pattern: String, date: Long): String {
         return (SimpleDateFormat(pattern, getBrazilianLocation()).format(Date(date)) ?: "")
             .toUpperCase(getBrazilianLocation())
     }
