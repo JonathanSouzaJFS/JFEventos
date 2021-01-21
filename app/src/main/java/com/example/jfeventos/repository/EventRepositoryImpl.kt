@@ -7,4 +7,8 @@ class EventRepositoryImpl(private val apiService: ApiService) : EventRepository 
     override suspend fun getEvents(): List<Event> {
         return apiService.getEvents()
     }
+
+    override suspend fun getEventDetail(id : Long): Event {
+        return apiService.getEventDetails(id)
+    }
 }

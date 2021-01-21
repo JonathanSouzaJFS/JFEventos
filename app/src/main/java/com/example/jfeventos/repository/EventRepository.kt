@@ -4,4 +4,5 @@ import com.example.jfeventos.model.Event
 
 interface EventRepository {
     suspend fun getEvents() : List<Event>
+    suspend fun getEventDetail(id : Long) : Event
 }
