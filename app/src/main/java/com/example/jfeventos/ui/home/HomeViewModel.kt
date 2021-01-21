@@ -1,4 +1,4 @@
-package com.example.jfeventos.ui
+package com.example.jfeventos.ui.home
 
 import android.content.Context
 import androidx.lifecycle.liveData
@@ -13,8 +13,6 @@ import kotlinx.coroutines.Dispatchers.IO
 class HomeViewModel(
     private val eventRepository: EventRepository
 ) : BaseViewModel() {
-
-    private var listEvent: MutableList<Event> = mutableListOf()
 
     fun getEvents(context: Context) = liveData(IO) {
         emit(NetworkResponse.Loading)
