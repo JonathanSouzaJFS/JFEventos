@@ -15,30 +15,35 @@ class DetailsViewModel(
     private val eventRepository: EventRepository
 ) : BaseViewModel() {
 
-    private var listEvent: MutableList<Event> = mutableListOf()
-
     fun getEventDetail(context: Context, id : Long) = liveData(IO) {
-        emit(NetworkResponse.Loading)
+        loading.postValue(true)
         if (hasInternet(context)) {
             try {
                 emit(NetworkResponse.Success(data = eventRepository.getEventDetail(id)))
+                loading.postValue(false)
             } catch (exception: Exception) {
                 emit(NetworkResponse.Error(exception = exception.message ?: context.getString(R.string.error_default)))
+                loading.postValue(false)
             }
         } else {
             emit(NetworkResponse.Error(exception = context.getString(R.string.error_connection)))
+            loading.postValue(false)
         }
     }
 
     fun sendEventCheckIn(context: Context, checkin : CheckIn) = liveData(IO) {
-        emit(NetworkResponse.Loading)
+        loading.postValue(true)
         if (hasInternet(context)) {
             try {
                 emit(NetworkResponse.Success(data = eventRepository.sendEventCheckIn(checkin)))
+                loading.postValue(false)
             } catch (exception: Exception) {
                 emit(NetworkResponse.Error(exception = exception.message ?: context.getString(R.string.error_default)))
+                loading.postValue(false)
             }
-        } else
+        } else {
             emit(NetworkResponse.Error(exception = context.getString(R.string.error_connection)))
+            loading.postValue(false)
+        }
     }
 }

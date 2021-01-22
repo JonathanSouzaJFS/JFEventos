@@ -14,14 +14,18 @@ class HomeViewModel(
 ) : BaseViewModel() {
 
     fun getEvents(context: Context) = liveData(IO) {
-        emit(NetworkResponse.Loading)
+        loading.postValue(true)
         if (hasInternet(context)) {
             try {
                 emit(NetworkResponse.Success(data = eventRepository.getEvents()))
+                loading.postValue(false)
             } catch (exception: Exception) {
                 emit(NetworkResponse.Error(exception = exception.message ?: context.getString(R.string.error_default)))
+                loading.postValue(false)
             }
-        } else
-            emit(NetworkResponse.Error(exception = context.getString(R.string.error_connection)))
+        } else{
+            emit(NetworkResponse.NetworkError(exception = context.getString(R.string.error_connection)))
+            loading.postValue(false)
+        }
     }
 }

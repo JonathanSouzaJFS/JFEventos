@@ -1,7 +1,6 @@
 package br.com.jfeventos.ui.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +13,7 @@ import br.com.jfeventos.model.Event
 import br.com.jfeventos.ui.EventAdapter
 import br.com.jfeventos.utils.NetworkResponse
 import br.com.jfeventos.utils.showDialogError
+import br.com.jfeventos.utils.showNetworkError
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
@@ -21,7 +21,6 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     private val viewModel by viewModel<HomeViewModel>()
     private lateinit var mBinding: FragmentHomeBinding
     private lateinit var adapter: EventAdapter
-    private var loading = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,23 +53,29 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     }
 
     private fun setupObservers() {
+
+        viewModel.loading.observe(requireActivity(), { loading ->
+            if (loading) {
+                mBinding.progressBar.visibility = View.VISIBLE
+            } else {
+                mBinding.progressBar.visibility = View.GONE
+                mBinding.swipeRefresh.isRefreshing = false
+            }
+        })
+
         viewModel.getEvents(requireContext()).observe(requireActivity(), {
             it?.let { resource ->
                 when (resource) {
                     is NetworkResponse.Success -> {
-                        mBinding.progressBar.visibility = View.GONE
                         retrieveList(resource.data)
-                        loading = false
-                        mBinding.swipeRefresh.isRefreshing = false
                     }
                     is NetworkResponse.Error -> {
-                        mBinding.progressBar.visibility = View.GONE
                         showDialogError(requireContext(), resource.exception)
-                        loading = false
-                        mBinding.swipeRefresh.isRefreshing = false
                     }
-                    is NetworkResponse.Loading -> {
-                        mBinding.progressBar.visibility = View.VISIBLE
+                    is NetworkResponse.NetworkError -> {
+                        showNetworkError(requireContext()) {
+                            viewModel.getEvents(requireActivity())
+                        }
                     }
                 }
             }
