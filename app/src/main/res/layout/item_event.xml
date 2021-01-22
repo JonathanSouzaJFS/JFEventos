@@ -7,7 +7,7 @@
 
         <variable
             name="event"
-            type="com.example.jfeventos.model.Event" />
+            type="br.com.jfeventos.model.Event" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -37,13 +37,13 @@
                 android:background="@color/colorWhite"
                 android:padding="8dp">
 
-                <com.example.jfeventos.ui.components.date.EventDateView
+                <br.com.jfeventos.ui.components.date.EventDateView
                     android:id="@+id/eventDateView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true" />
 
-                <com.example.jfeventos.ui.components.resume.EventResumeView
+                <br.com.jfeventos.ui.components.resume.EventResumeView
                     android:id="@+id/eventResumeView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

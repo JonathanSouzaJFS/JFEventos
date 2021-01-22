@@ -14,7 +14,7 @@ android {
         dataBinding = true
     }
     defaultConfig {
-        applicationId "com.example.jfeventos"
+        applicationId "br.com.jfeventos"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
