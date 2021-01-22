@@ -13,6 +13,7 @@ import com.example.jfeventos.databinding.FragmentHomeBinding
 import com.example.jfeventos.model.Event
 import com.example.jfeventos.ui.EventAdapter
 import com.example.jfeventos.utils.NetworkResponse
+import com.example.jfeventos.utils.showError
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
@@ -64,8 +65,7 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
                     }
                     is NetworkResponse.Error -> {
                         mBinding.progressBar.visibility = View.GONE
-                        Toast.makeText(requireContext(), resource.exception, Toast.LENGTH_LONG)
-                            .show()
+                        showError(requireContext(), resource.exception)
                         loading = false
                         mBinding.swipeRefresh.isRefreshing = false
                     }
