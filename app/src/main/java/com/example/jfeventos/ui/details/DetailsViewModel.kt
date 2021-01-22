@@ -25,8 +25,9 @@ class DetailsViewModel(
             } catch (exception: Exception) {
                 emit(NetworkResponse.Error(exception = exception.message ?: context.getString(R.string.error_default)))
             }
-        } else
+        } else {
             emit(NetworkResponse.Error(exception = context.getString(R.string.error_connection)))
+        }
     }
 
     fun sendEventCheckIn(context: Context, checkin : CheckIn) = liveData(IO) {

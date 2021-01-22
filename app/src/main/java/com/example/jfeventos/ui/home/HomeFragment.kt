@@ -1,10 +1,10 @@
 package com.example.jfeventos.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +13,7 @@ import com.example.jfeventos.databinding.FragmentHomeBinding
 import com.example.jfeventos.model.Event
 import com.example.jfeventos.ui.EventAdapter
 import com.example.jfeventos.utils.NetworkResponse
-import com.example.jfeventos.utils.showError
+import com.example.jfeventos.utils.showDialogError
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
@@ -47,6 +47,7 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     private fun setupRecyclerViewAdapter() {
         adapter = EventAdapter(requireContext(), arrayListOf()) {
+            Log.i("ResultadoJFS", "ID: ${it.id}")
             val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(it.id)
             requireView().findNavController().navigate(action)
         }
@@ -65,7 +66,7 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
                     }
                     is NetworkResponse.Error -> {
                         mBinding.progressBar.visibility = View.GONE
-                        showError(requireContext(), resource.exception)
+                        showDialogError(requireContext(), resource.exception)
                         loading = false
                         mBinding.swipeRefresh.isRefreshing = false
                     }

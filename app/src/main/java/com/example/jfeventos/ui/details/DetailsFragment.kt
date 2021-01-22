@@ -1,19 +1,20 @@
 package com.example.jfeventos.ui.details
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.jfeventos.databinding.FragmentDetailsBinding
 import com.example.jfeventos.model.CheckIn
 import com.example.jfeventos.model.Event
 import com.example.jfeventos.utils.BidingUtils
 import com.example.jfeventos.utils.NetworkResponse
-import com.example.jfeventos.utils.showError
+import com.example.jfeventos.utils.showDialogError
+import com.example.jfeventos.utils.showDialogSucess
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
@@ -21,7 +22,7 @@ class DetailsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     private val viewModel by viewModel<DetailsViewModel>()
     private lateinit var mBinding: FragmentDetailsBinding
     private var loading = false
-    private var idEvent = arguments?.getLong("id")
+    private var idEvent : Long? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +34,14 @@ class DetailsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        idEvent = arguments?.getLong("id")
+
+        if(idEvent == null){
+            showDialogError(requireContext(), "Evento indisponivel")
+            findNavController().popBackStack()
+            return
+        }
         viewModel.getEventDetail(requireActivity(), idEvent ?: 1L)
 
         setupEventDetailObserver()
@@ -78,19 +87,15 @@ class DetailsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
                     when (resource) {
                         is NetworkResponse.Success -> {
                             mBinding.progressBar.visibility = View.GONE
-                            resource.data.body()
-                            Log.i("ResultadoJFS", "CheckIn realizado! ${resource.data.body()}")
-                            Log.i("ResultadoJFS", "CheckIn realizado! ${resource.data.code()}")
+                            showDialogSucess(requireContext(), "CheckIn realizado com sucesso!")
                             loading = false
-                            //mBinding.swipeRefresh.isRefreshing = false
+                         //   mBinding.swipeRefresh.isRefreshing = false
                         }
                         is NetworkResponse.Error -> {
                             mBinding.progressBar.visibility = View.GONE
-//                            Toast.makeText(requireContext(), resource.exception, Toast.LENGTH_LONG)
-//                                .show()
-                            showError(requireContext(), resource.exception)
+                            showDialogError(requireContext(), resource.exception)
                             loading = false
-                            //    mBinding.swipeRefresh.isRefreshing = false
+                      //      mBinding.swipeRefresh.isRefreshing = false
                         }
                         is NetworkResponse.Loading -> {
                             mBinding.progressBar.visibility = View.VISIBLE

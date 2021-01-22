@@ -7,10 +7,22 @@ import androidx.appcompat.app.AlertDialog
 import com.example.jfeventos.R
 
 
-fun showError(context: Context, message: String?) {
+fun showDialogError(context: Context, message: String?) {
     try {
         AlertDialog.Builder(context, R.style.DialogTheme).show(
             title = context.getString(R.string.ops_title),
+            contentDescription = message ?: "",
+            positiveButtonDescription = context.getString(R.string.ok)
+        )
+    } catch (ignored: Exception) {
+        Log.i("", ignored.message ?: "Falha em mostrar o AlertDialog.")
+    }
+}
+
+fun showDialogSucess(context: Context, message: String?) {
+    try {
+        AlertDialog.Builder(context, R.style.DialogTheme).show(
+            title = context.getString(R.string.sucesso_title),
             contentDescription = message ?: "",
             positiveButtonDescription = context.getString(R.string.ok)
         )
