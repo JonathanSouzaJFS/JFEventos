@@ -18,6 +18,7 @@ class DetailsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     private val viewModel by viewModel<DetailsViewModel>()
     private lateinit var mBinding: FragmentDetailsBinding
     private var loading = false
+    private var idEvent = arguments?.getLong("id")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,12 +30,17 @@ class DetailsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.getEventDetail(requireActivity(), arguments?.getLong("id") ?: 1L)
+        viewModel.getEventDetail(requireActivity(), idEvent ?: 1L)
         setupObservers()
+
+        mBinding.eventCheckIn.bind(idEvent = idEvent ?: 1L, onCheckInSelected = { email, name, id ->
+            // FAZER CHECKIN AQUI!
+        })
+
     }
 
     private fun setupObservers() {
-        viewModel.getEventDetail(requireContext(), arguments?.getLong("id") ?: 1L)
+        viewModel.getEventDetail(requireContext(), idEvent ?: 1L)
             .observe(requireActivity(), {
                 it?.let { resource ->
                     when (resource) {

@@ -29,7 +29,7 @@ class ResumeCheckInView @JvmOverloads constructor(
         inflate(context, R.layout.component_resume_checkin, this)
         nameCheckIn = findViewById(R.id.name)
         emailCheckIn = findViewById(R.id.email)
-        eventCheckIn = findViewById(R.id.eventCheckIn)
+        eventCheckIn = findViewById(R.id.eventButton)
         userModel.getEmail()?.let { setEmailField(it) }
         userModel.getName()?.let { setNameField(it) }
     }
