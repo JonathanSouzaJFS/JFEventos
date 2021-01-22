@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/attribute_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -61,10 +62,11 @@
             android:textSize="14sp" />
     </LinearLayout>
 
-    <View
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/eventCheckIn"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_margin="16dp"
-        android:background="#E35093" />
-
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:text="Realizar Check-In"
+        android:background="#E35093"/>
 </LinearLayout>

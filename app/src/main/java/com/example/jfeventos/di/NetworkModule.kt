@@ -1,5 +1,7 @@
 package com.example.jfeventos.di
 
+import android.content.SharedPreferences
+import androidx.preference.PreferenceManager
 import com.example.jfeventos.api.ApiService
 import com.example.jfeventos.utils.BASE_URL
 import okhttp3.OkHttpClient
@@ -29,4 +31,6 @@ val networkModule = module {
     single {
         get<Retrofit>().create<ApiService>()
     }
+
+    single<SharedPreferences> { PreferenceManager.getDefaultSharedPreferences(get()) }
 }

@@ -1,8 +1,11 @@
 package com.example.jfeventos.utils
 
 import android.content.Context
+import android.content.DialogInterface
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import androidx.appcompat.app.AlertDialog
+import com.example.jfeventos.R
 
 fun hasInternet(context: Context?): Boolean {
     val connectivityManager =
@@ -23,3 +26,27 @@ fun hasInternet(context: Context?): Boolean {
         return false
     }
 }
+
+fun AlertDialog.Builder.show(
+    title: String,
+    contentDescription: String = "",
+    positiveButtonDescription: String? = null,
+    positiveButtonAction: (DialogInterface?) -> Unit = {},
+    negativeButtonDescription: String? = null,
+    negativeButtonAction: (DialogInterface?) -> Unit = {},
+    isCancelable: Boolean = true
+): AlertDialog {
+    setTitle(context.getString(R.string.ops_title))
+        .setCancelable(isCancelable)
+        .setTitle(title)
+        .setMessage(contentDescription)
+    positiveButtonDescription?.let { description ->
+        setPositiveButton(description) { dialog, _ -> positiveButtonAction(dialog) }
+    }
+
+    negativeButtonDescription?.let { description ->
+        setNegativeButton(description) { dialog, _ -> negativeButtonAction(dialog) }
+    }
+    return show()
+}
+

@@ -4,4 +4,10 @@
     <!-- Error -->
     <string name="error_default">Error Occurred!</string>
     <string name="error_connection">You have no internet connection!</string>
+    <string name="ops_title">Opss!</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
+    <string name="try_again">Tente Novamente!</string>
+
+
 </resources>
