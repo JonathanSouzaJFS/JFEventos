@@ -29,7 +29,6 @@ class EventHourView @JvmOverloads constructor(
 
     private fun setHourEvent(date: Long) = try {
         hourEvent.text = convertDateFromPattern("hh:mm", date)
-            .dropLast(1)
     } catch (e: Exception) {
         hourEvent.text = ""
     }

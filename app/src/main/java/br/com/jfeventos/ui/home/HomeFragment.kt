@@ -47,7 +47,6 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     private fun setupRecyclerViewAdapter() {
         adapter = EventAdapter(requireContext(), arrayListOf()) {
-            Log.i("ResultadoJFS", "ID: ${it.id}")
             val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(it.id)
             requireView().findNavController().navigate(action)
         }
