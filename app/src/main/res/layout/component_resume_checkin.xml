@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/attribute_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -37,6 +36,7 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="1"
             android:layout_marginTop="16dp"
             android:hint="Nome" />
 
@@ -44,6 +44,7 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="1"
             android:layout_marginTop="6dp"
             android:hint="Email" />
 

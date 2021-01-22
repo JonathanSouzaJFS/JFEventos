@@ -7,7 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import com.example.jfeventos.R
 
 
-fun checkError(context: Context, message: String?) {
+fun showError(context: Context, message: String?) {
     try {
         AlertDialog.Builder(context, R.style.DialogTheme).show(
             title = context.getString(R.string.ops_title),

@@ -1,8 +1,12 @@
 package com.example.jfeventos.api
 
+import com.example.jfeventos.model.CheckIn
 import com.example.jfeventos.model.Event
-import retrofit2.Call
+import okhttp3.ResponseBody
+import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ApiService {
@@ -11,4 +15,7 @@ interface ApiService {
 
     @GET("events/{id}")
     suspend fun getEventDetails(@Path("id") id: Long): Event
+
+    @POST("checkin")
+    suspend fun sendEventCheckIn(@Body checkin: CheckIn) : Response<ResponseBody>
 }

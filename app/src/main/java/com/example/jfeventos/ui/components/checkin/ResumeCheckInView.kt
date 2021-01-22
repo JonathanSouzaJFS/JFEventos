@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.util.Patterns
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.jfeventos.R
+import com.example.jfeventos.model.CheckIn
 import com.example.jfeventos.repository.UserRepository
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
@@ -22,7 +23,7 @@ class ResumeCheckInView @JvmOverloads constructor(
     private val nameCheckIn: TextInputEditText
     private val emailCheckIn: TextInputEditText
     private val eventCheckIn: MaterialButton
-    private var onCheckInSelected: (String, String, Long) -> Unit = { _, _, _ -> }
+    private var onCheckInSelected: (CheckIn) -> Unit = { _ -> }
     private val userModel: UserRepository by inject()
 
     init {
@@ -34,13 +35,13 @@ class ResumeCheckInView @JvmOverloads constructor(
         userModel.getName()?.let { setNameField(it) }
     }
 
-    fun bind(idEvent: Long, onCheckInSelected: (String, String, Long) -> Unit) {
+    fun bind(idEvent: Long, onCheckInSelected: (CheckIn) -> Unit) {
         this.onCheckInSelected = onCheckInSelected
         eventCheckIn.setOnClickListener {
             if (checkFieldsOk()) {
                 userModel.setEmail(getEmailField())
                 userModel.setName(getNameField())
-                onCheckInSelected(getEmailField(), getNameField(), idEvent)
+                onCheckInSelected(CheckIn(idEvent, getEmailField(), getNameField()))
             }
         }
     }
