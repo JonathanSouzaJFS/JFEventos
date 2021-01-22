@@ -1,5 +1,7 @@
 package br.com.jfeventos.ui.details
 
+import android.content.Context
+import android.location.Geocoder
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,10 +13,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import br.com.jfeventos.databinding.FragmentDetailsBinding
 import br.com.jfeventos.model.CheckIn
 import br.com.jfeventos.model.Event
-import br.com.jfeventos.utils.BidingUtils
-import br.com.jfeventos.utils.NetworkResponse
-import br.com.jfeventos.utils.showDialogError
-import br.com.jfeventos.utils.showDialogSucess
+import br.com.jfeventos.utils.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
@@ -105,13 +104,21 @@ class DetailsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
             })
     }
 
+    private fun setLocationEvent(context: Context, long: String, lat: String) = try {
+        val geocoder = Geocoder(context, getBrazilianLocation())
+        val addresses = geocoder.getFromLocation(lat.toDouble(), long.toDouble(), 1)
+        mBinding.eventLocaleView.bind(addresses[0].subAdminArea,  addresses[0].adminArea)
+        mBinding.eventInfoLocale.text = addresses[0].getAddressLine(0)
+    } catch (ex: Exception) {
+     //   cityEvent.text = "Indefinido"
+    }
+
     private fun retrieveList(event: Event) {
         mBinding.eventDateView.bind(event.date)
         mBinding.eventHourView.bind(event.date)
         BidingUtils.loadImageView(mBinding.ownerPhoto, event.image)
-        mBinding.eventLocaleView.bind("Manaus", "Amazonas")
+        setLocationEvent(requireContext(), event.longitude, event.latitude)
         mBinding.eventDescription.text = event.description
-        mBinding.eventInfoLocale.text = event.latitude
     }
 
     override fun onRefresh() {

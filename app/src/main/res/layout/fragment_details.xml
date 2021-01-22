@@ -84,10 +84,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
             android:text="SOBRE O EVENTO"
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:textColor="@color/colorBlack"
             android:textSize="14sp"
+
             android:textStyle="bold"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:layout_constraintEnd_toEndOf="parent"
@@ -99,6 +101,8 @@
             android:layout_width="15dp"
             android:layout_height="2dp"
             android:layout_marginStart="8dp"
+
+            android:layout_marginEnd="4dp"
             android:background="#E35093"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -111,9 +115,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="6dp"
+            android:layout_marginEnd="4dp"
             android:text="Toda quarta-feira, das 17h às 22h, encontre a feira mais charmosa de produtos frescos, naturais e orgânicos no estacionamento do Shopping. Sintonizado com a tendência crescente de busca pela alimentação saudável, consumo consciente e qualidade de vida."
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:textColor="@color/colorBlack"
+
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -150,6 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="6dp"
+            android:layout_marginEnd="4dp"
             android:text="Manaus, Amazonas, Brazil."
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:textColor="@color/colorBlack"
@@ -169,14 +176,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eventInfoLocale" />
 
-        <ProgressBar
+
+        <RelativeLayout
             android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#E35093"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

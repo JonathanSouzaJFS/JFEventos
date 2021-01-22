@@ -36,17 +36,21 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="16dp"
-            android:hint="Nome" />
+            android:layout_marginEnd="4dp"
+            android:hint="Nome"
+            android:maxLines="1" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="6dp"
-            android:hint="Email" />
+            android:layout_marginEnd="4dp"
+            android:hint="Email"
+            android:maxLines="1" />
 
         <TextView
             android:id="@+id/attributes_shipping_description"
@@ -68,6 +72,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:text="Realizar Check-In"
-        android:background="#E35093"/>
+        android:background="#E35093"
+        android:text="Realizar Check-In" />
 </LinearLayout>

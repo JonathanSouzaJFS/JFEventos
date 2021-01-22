@@ -6,6 +6,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.appcompat.app.AlertDialog
 import br.com.jfeventos.R
+import java.util.Locale
 
 fun hasInternet(context: Context?): Boolean {
     val connectivityManager =
@@ -49,4 +50,6 @@ fun AlertDialog.Builder.show(
     }
     return show()
 }
+
+fun getBrazilianLocation() = Locale("pt", "BR")
 
