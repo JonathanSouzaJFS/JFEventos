@@ -1,7 +1,9 @@
 package br.com.jfeventos.di
 
+import br.jfeventos.domain.di.domainModule
+
 val appComponent = listOf(
-    networkModule,
-    viewModelModule,
-    repositoryModule
+    dataModule,
+    domainModule,
+    viewModelModule
 )

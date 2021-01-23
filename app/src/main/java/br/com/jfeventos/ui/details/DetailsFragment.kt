@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.jfeventos.databinding.FragmentDetailsBinding
-import br.com.jfeventos.model.CheckIn
-import br.com.jfeventos.model.Event
 import br.com.jfeventos.utils.*
+import br.jfeventos.domain.model.CheckIn
+import br.jfeventos.domain.model.Event
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailsFragment : Fragment() {

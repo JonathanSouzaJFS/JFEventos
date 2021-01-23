@@ -9,11 +9,11 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import br.com.jfeventos.databinding.FragmentHomeBinding
-import br.com.jfeventos.model.Event
 import br.com.jfeventos.ui.EventAdapter
 import br.com.jfeventos.utils.NetworkResponse
 import br.com.jfeventos.utils.showDialogError
 import br.com.jfeventos.utils.showNetworkError
+import br.jfeventos.domain.model.Event
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {

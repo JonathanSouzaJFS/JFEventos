@@ -5,8 +5,8 @@ import android.util.AttributeSet
 import android.util.Patterns
 import androidx.constraintlayout.widget.ConstraintLayout
 import br.com.jfeventos.R
-import br.com.jfeventos.model.CheckIn
-import br.com.jfeventos.repository.UserRepository
+import br.jfeventos.domain.model.CheckIn
+import br.jfeventos.domain.repository.UserRepository
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import org.koin.core.KoinComponent

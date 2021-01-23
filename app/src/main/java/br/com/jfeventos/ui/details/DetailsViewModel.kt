@@ -3,12 +3,11 @@ package br.com.jfeventos.ui.details
 import android.content.Context
 import androidx.lifecycle.liveData
 import br.com.jfeventos.R
-import br.com.jfeventos.model.CheckIn
-import br.com.jfeventos.model.Event
-import br.com.jfeventos.repository.EventRepository
 import br.com.jfeventos.ui.base.BaseViewModel
 import br.com.jfeventos.utils.NetworkResponse
 import br.com.jfeventos.utils.hasInternet
+import br.jfeventos.data.repository.EventRepository
+import br.jfeventos.domain.model.CheckIn
 import kotlinx.coroutines.Dispatchers.IO
 
 class DetailsViewModel(

@@ -8,7 +8,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import br.com.jfeventos.databinding.ItemEventBinding
-import br.com.jfeventos.model.Event
+import br.jfeventos.domain.model.Event
 import kotlin.collections.ArrayList
 
 class EventAdapter(

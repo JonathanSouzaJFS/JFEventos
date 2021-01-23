@@ -7,7 +7,7 @@
 
         <variable
             name="event"
-            type="br.com.jfeventos.model.Event" />
+            type="br.jfeventos.domain.model.Event" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

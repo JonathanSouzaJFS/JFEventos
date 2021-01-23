@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+apply from: '../gradle_util/android-build.gradle'
+
+dependencies {
+    implementation Libs.koin
+    implementation Libs.retrofit
+    implementation Libs.interceptor
+    implementation Libs.gsonConverter
+    implementation project(Module.domain)
+}

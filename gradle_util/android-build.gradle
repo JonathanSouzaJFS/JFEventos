@@ -1,0 +1,48 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion BuildVersions.compileSdkVersion
+    buildToolsVersion BuildVersions.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion BuildVersions.minSdkVersion
+        targetSdkVersion BuildVersions.targetSdkVersion
+        versionCode BuildVersions.versionCode
+        versionName BuildVersions.versionName
+
+        testInstrumentationRunner BuildNames.testInstrumentationRunner
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = true
+        }
+    }
+}
+
+dependencies {
+    implementation Libs.kotlinStd
+}
+

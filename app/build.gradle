@@ -1,76 +1,122 @@
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
-    id 'androidx.navigation.safeargs.kotlin'
-}
+apply plugin: 'com.android.application'
+apply from: '../gradle_util/android-build.gradle'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
-
-    buildFeatures {
-        viewBinding true
-        dataBinding = true
-    }
     defaultConfig {
-        applicationId "br.com.jfeventos"
-        minSdkVersion 19
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
+        applicationId BuildNames.applicationId
     }
 }
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.21"
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
-    testImplementation 'junit:junit:4.13.1'
+//    implementation project(Module.gistList)
+//    implementation project(Module.detail)
+//    implementation project(Module.favorites)
+//    implementation project(Module.common)
+    implementation project(Module.domain)
+    implementation project(Module.data)
+//    implementation project(Module.navigation)
+
+    implementation Libs.kotlinStd
+    implementation Libs.coreKtx
+    implementation Libs.appCompat
+    implementation Libs.material
+    implementation Libs.constraintLayout
+    implementation Libs.koin
+    implementation Libs.koinViewModel
+    implementation Libs.koinScope
+    implementation Libs.picasso
+    implementation Libs.sharedPreference
+    implementation Libs.interceptor
+    implementation Libs.swipeRefresh
+    implementation Libs.lifecycle
+    implementation Libs.lifecycleKtx
+    implementation Libs.lifecycleLiveData
+    implementation Libs.lifecycleCommon
+    implementation Libs.retrofit
+    implementation Libs.gsonConverter
+    implementation Libs.navigationFragment
+    implementation Libs.navigationKtx
+
+
+    testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1'
-
-    // Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-
-    // LifeCycle
-    implementation "androidx.lifecycle:lifecycle-common:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-
-    // Koin
-    implementation "org.koin:koin-android:$koin_version"
-    implementation "org.koin:koin-androidx-scope:$koin_version"
-    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
-
-    // Picasso
-    implementation 'com.squareup.picasso:picasso:2.71828'
-
-    // SharedPreferences
-    implementation 'androidx.preference:preference-ktx:1.1.1'
 }
+
+//plugins {
+//    id 'com.android.application'
+//    id 'kotlin-android'
+//    id 'kotlin-kapt'
+//    id 'androidx.navigation.safeargs.kotlin'
+//}
+
+//android {
+//    compileSdkVersion 30
+//    buildToolsVersion "30.0.2"
+//
+//    buildFeatures {
+//        viewBinding true
+//        dataBinding = true
+//    }
+//    defaultConfig {
+//        applicationId "br.com.jfeventos"
+//        minSdkVersion 19
+//        targetSdkVersion 30
+//        versionCode 1
+//        versionName "1.0"
+//
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//    }
+//
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
+//    kotlinOptions {
+//        jvmTarget = '1.8'
+//    }
+//}
+//
+//dependencies {
+//
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.21"
+//    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+//    implementation 'androidx.core:core-ktx:1.3.2'
+//    implementation 'androidx.appcompat:appcompat:1.2.0'
+//    implementation 'com.google.android.material:material:1.2.1'
+//    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+//    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
+//    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+//    testImplementation 'junit:junit:4.13.1'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+//    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1'
+//
+//    // Retrofit
+//    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+//    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+//
+//    // LifeCycle
+//    implementation "androidx.lifecycle:lifecycle-common:$lifecycle_version"
+//    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+//    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+//    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+//
+//    // Koin
+//    implementation "org.koin:koin-android:$koin_version"
+//    implementation "org.koin:koin-androidx-scope:$koin_version"
+//    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+//
+//    // Picasso
+//    implementation 'com.squareup.picasso:picasso:2.71828'
+//
+//    // SharedPreferences
+//    implementation 'androidx.preference:preference-ktx:1.1.1'
+//}

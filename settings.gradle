@@ -1,2 +1,7 @@
+include ':customViews'
+include ':testUtils'
+include ':features'
+include ':data'
+include ':domain'
 include ':app'
 rootProject.name = "JFEventos"
