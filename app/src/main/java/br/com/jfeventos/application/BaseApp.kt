@@ -1,4 +1,4 @@
-package br.com.jfeventos.ui
+package br.com.jfeventos.application
 
 import android.app.Application
 import br.com.jfeventos.di.appComponent
