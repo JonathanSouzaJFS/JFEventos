@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute">
-        <activity android:name="br.jfeventos.common.MainActivity">
+        <activity android:name="br.jfeventos.common.NavigationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

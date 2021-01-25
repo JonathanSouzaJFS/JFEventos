@@ -14,19 +14,19 @@ fun showDialogError(context: Context, message: String?) {
             positiveButtonDescription = context.getString(R.string.ok)
         )
     } catch (ignored: Exception) {
-        Log.i("", ignored.message ?: "Falha em mostrar o AlertDialog.")
+        Log.i(context.getString(R.string.appName), ignored.message ?: context.getString(R.string.error_dialog))
     }
 }
 
 fun showDialogSucess(context: Context, message: String?) {
     try {
         AlertDialog.Builder(context, R.style.DialogTheme).show(
-            title = context.getString(R.string.sucesso_title),
+            title = context.getString(R.string.sucess_title),
             contentDescription = message ?: "",
             positiveButtonDescription = context.getString(R.string.ok)
         )
     } catch (ignored: Exception) {
-        Log.i("", ignored.message ?: "Falha em mostrar o AlertDialog.")
+        Log.i("", ignored.message ?: context.getString(R.string.error_dialog))
     }
 }
 
@@ -42,6 +42,6 @@ fun showNetworkError(context: Context, positiveButtonAction: (DialogInterface?) 
                 negativeButtonAction = { dialog -> dialog?.dismiss() }
             )
     } catch (ignored: Exception) {
-        Log.i("", ignored.message ?: "Falha em mostrar o AlertDialog.")
+        Log.i("", ignored.message ?: context.getString(R.string.error_dialog))
     }
 }
