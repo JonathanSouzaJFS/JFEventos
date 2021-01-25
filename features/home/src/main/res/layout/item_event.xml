@@ -37,13 +37,13 @@
                 android:background="@color/colorWhite"
                 android:padding="8dp">
 
-                <br.com.jfeventos.ui.components.date.EventDateView
+                <br.jfeventos.customviews.date.EventDateView
                     android:id="@+id/eventDateView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true" />
 
-                <br.com.jfeventos.ui.components.resume.EventResumeView
+                <br.jfeventos.customviews.resume.EventResumeView
                     android:id="@+id/eventResumeView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
