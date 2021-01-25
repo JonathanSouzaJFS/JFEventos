@@ -24,6 +24,7 @@ object Version {
     const val archTest = "2.1.0"
     const val jUnitExt = "1.1.1"
     const val truth = "1.1"
+    const val coroutines = "1.4.2"
 }
 
 object Libs {
@@ -64,6 +65,7 @@ object LibsTest{
     const val mockk = "io.mockk:mockk:${Version.mockk}"
     const val testCoreKtx = "androidx.test:core-ktx:${Version.testCore}"
     const val koinTest = "org.koin:koin-test:${Version.koin}"
+    const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.coroutines}"
     const val archTest = "androidx.arch.core:core-testing:${Version.archTest}"
     const val coreKtx = "androidx.core:core-ktx:${Version.coreKtx}"
     const val jUnitExt = "androidx.test.ext:junit:${Version.jUnitExt}"
