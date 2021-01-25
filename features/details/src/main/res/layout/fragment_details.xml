@@ -8,9 +8,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ui.details.DetailsFragment">
+        tools:context="br.jfeventos.details.DetailsFragment">
 
         <com.google.android.material.appbar.AppBarLayout
+
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="450dp"
@@ -46,7 +47,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
 
-        <br.com.jfeventos.ui.components.date.EventDateView
+        <br.jfeventos.customviews.date.EventDateView
             android:id="@+id/eventDateView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,7 +57,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/app_bar" />
 
-        <br.com.jfeventos.ui.components.date.EventHourView
+        <br.jfeventos.customviews.date.EventHourView
             android:id="@+id/eventHourView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,7 +67,7 @@
             app:layout_constraintStart_toEndOf="@+id/eventDateView"
             app:layout_constraintTop_toBottomOf="@+id/app_bar" />
 
-        <br.com.jfeventos.ui.components.date.EventLocaleView
+        <br.jfeventos.customviews.date.EventLocaleView
             android:id="@+id/eventLocaleView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -167,7 +168,7 @@
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
 
-        <br.com.jfeventos.ui.components.checkin.ResumeCheckInView
+        <br.jfeventos.customviews.checkin.ResumeCheckInView
             android:id="@+id/eventCheckIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
