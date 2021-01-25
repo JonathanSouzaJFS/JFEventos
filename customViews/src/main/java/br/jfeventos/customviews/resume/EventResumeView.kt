@@ -1,11 +1,11 @@
-package br.com.jfeventos.ui.components.resume
+package br.jfeventos.customviews.resume
 
 import android.content.Context
 import android.location.Geocoder
 import android.util.AttributeSet
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import br.com.jfeventos.R
+import br.jfeventos.customviews.R
 import org.koin.core.KoinComponent
 import java.math.BigDecimal
 import java.util.*

@@ -1,10 +1,10 @@
-package br.com.jfeventos.ui.components.date
+package br.jfeventos.customviews.date
 
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import br.com.jfeventos.R
+import br.jfeventos.customviews.R
 import org.koin.core.KoinComponent
 
 
