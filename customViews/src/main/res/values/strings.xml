@@ -7,4 +7,9 @@
     <string name="cancel">Cancelar</string>
     <string name="try_again">Tente Novamente!</string>
     <string name="sucesso_title">Parabéns!</string>
+    <string name="checkin_button">Realizar Check-In</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_name">Nome</string>
+    <string name="checkin_title">Check-In no Evento</string>
+    <string name="checkin_info">Suas informações ficam salvas após primeiro check-in</string>
 </resources>

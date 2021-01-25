@@ -19,9 +19,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
-            android:text="Check-In no Evento"
+            android:text="@string/checkin_title"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            android:textColor="#E35093"
+            android:textColor="@color/colorEvent"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="4dp"
-            android:background="#E35093" />
+            android:background="@color/colorEvent" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/name"
@@ -39,7 +39,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="4dp"
-            android:hint="Nome"
+            android:hint="@string/hint_name"
             android:maxLines="1" />
 
         <com.google.android.material.textfield.TextInputEditText
@@ -49,7 +49,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="4dp"
-            android:hint="Email"
+            android:hint="@string/hint_email"
             android:maxLines="1" />
 
         <TextView
@@ -61,9 +61,9 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:text="Suas informações ficam salvas após primeiro check-in"
+            android:text="@string/checkin_info"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            android:textColor="#E35093"
+            android:textColor="@color/colorEvent"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -72,6 +72,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:background="#E35093"
-        android:text="Realizar Check-In" />
+        android:background="@color/colorEvent"
+        android:text="@string/checkin_button" />
 </LinearLayout>

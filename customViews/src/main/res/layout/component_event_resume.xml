@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Manaus/AM"
         android:textAppearance="?attr/textAppearanceHeadline6"
-        android:textColor="#E35093"
+        android:textColor="@color/colorEvent"
         android:textSize="12sp" />
 
     <TextView
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:text="A partir de R$ 20,00"
         android:textAppearance="?attr/textAppearanceHeadline6"
-        android:textColor="#E35093"
+        android:textColor="@color/colorEvent"
         android:textSize="12sp"
         android:textStyle="bold" />
 </LinearLayout>

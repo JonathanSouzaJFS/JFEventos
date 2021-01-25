@@ -38,7 +38,7 @@
             android:gravity="center"
             android:text="27"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            android:textColor="#E35093"
+            android:textColor="@color/colorEvent"
             android:textSize="28sp"
             android:textStyle="bold" />
 
@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="24dp"
             android:layout_alignParentBottom="true"
-            android:background="#E35093"
+            android:background="@color/colorEvent"
             android:orientation="vertical">
 
             <TextView
