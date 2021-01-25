@@ -68,6 +68,7 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
                 when (resource) {
                     is NetworkResponse.Success -> {
                         retrieveList(resource.data)
+                        if (resource.data.isNullOrEmpty()) mBinding.eventIsEmpty.visibility = View.VISIBLE else mBinding.eventIsEmpty.visibility = View.GONE
                     }
                     is NetworkResponse.Error -> {
                         showDialogError(requireContext(), resource.exception)
