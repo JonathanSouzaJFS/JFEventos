@@ -1,10 +1,10 @@
-package br.com.jfeventos.ui.components.checkin
+package br.jfeventos.customviews.checkin
 
 import android.content.Context
 import android.util.AttributeSet
 import android.util.Patterns
 import androidx.constraintlayout.widget.ConstraintLayout
-import br.com.jfeventos.R
+import br.jfeventos.customviews.R
 import br.jfeventos.domain.model.CheckIn
 import br.jfeventos.domain.repository.UserRepository
 import com.google.android.material.button.MaterialButton
