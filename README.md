@@ -1,8 +1,8 @@
-#JFEventos
+# JFEventos
 
 - Diferente do [ListGist](http://https://github.com/JonathanFeitosa/ListGistGitHub "ListGist") que foca no modulo app, o **JFEventos** é um aplicativo focado na modularização e componentização usado por grandes empresas. Ambos trazem como benefícios: Reutilização, separação logica tornando claro o interesse de cada módulo, mais fácil para entender, testar e separar as atividades para cada membro do projeto, já que cada um trabalha em módulos/componentes separados, minumizando conflitos. Em alguns casos, possuem melhorias no build.
 
-<img src="https://firebasestorage.googleapis.com/v0/b/cep-rural.appspot.com/o/Captura%20de%20Tela%202021-01-25%20a%CC%80s%2010.15.29.png?alt=media&token=c2268682-fa2a-4bdb-8999-be80cf6a0a83" width="200"> <img src="https://firebasestorage.googleapis.com/v0/b/cep-rural.appspot.com/o/Captura%20de%20Tela%202021-01-25%20a%CC%80s%2010.16.05.png?alt=media&token=a15fa253-cf94-475b-8df0-f280fc0c4ba3" width="200"> <img src="https://firebasestorage.googleapis.com/v0/b/cep-rural.appspot.com/o/Captura%20de%20Tela%202021-01-25%20a%CC%80s%2010.16.15.png?alt=media&token=03bb62b3-4085-4ec7-8959-5988179b8344" width="200">
+<img src="https://firebasestorage.googleapis.com/v0/b/cep-rural.appspot.com/o/Captura%20de%20Tela%202021-01-25%20a%CC%80s%2010.15.29.png?alt=media&token=c2268682-fa2a-4bdb-8999-be80cf6a0a83" width="250"> <img src="https://firebasestorage.googleapis.com/v0/b/cep-rural.appspot.com/o/Captura%20de%20Tela%202021-01-25%20a%CC%80s%2010.16.05.png?alt=media&token=a15fa253-cf94-475b-8df0-f280fc0c4ba3" width="250"> <img src="https://firebasestorage.googleapis.com/v0/b/cep-rural.appspot.com/o/Captura%20de%20Tela%202021-01-25%20a%CC%80s%2010.16.15.png?alt=media&token=03bb62b3-4085-4ec7-8959-5988179b8344" width="250">
 
 #### Modularização
 
