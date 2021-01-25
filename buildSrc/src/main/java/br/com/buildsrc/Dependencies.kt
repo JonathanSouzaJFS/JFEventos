@@ -25,6 +25,7 @@ object Version {
     const val jUnitExt = "1.1.1"
     const val truth = "1.1"
     const val coroutines = "1.4.2"
+    const val mockito = "2.2.0"
 }
 
 object Libs {
@@ -70,4 +71,7 @@ object LibsTest{
     const val coreKtx = "androidx.core:core-ktx:${Version.coreKtx}"
     const val jUnitExt = "androidx.test.ext:junit:${Version.jUnitExt}"
     const val truth = "com.google.truth:truth:${Version.truth}"
+    const val mockito = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Version.mockito}"
+    const val fragmentTest2 = "androidx.fragment:fragment-testing:1.1.0-alpha05"
+    const val fragmentTest = "androidx.navigation:navigation-testing:${Version.navigation}"
 }

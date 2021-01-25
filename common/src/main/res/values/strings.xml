@@ -18,4 +18,5 @@
     <string name="indefined">Indefinido</string>
     <string name="event_indefined">Evento Indisponivel</string>
 
+    <string name="event_is_empty">Nenhum Evento Disponível</string>
 </resources>

@@ -4,8 +4,6 @@ import br.jfeventos.data.BASE_URL
 import br.jfeventos.data.remote.ApiService
 import br.jfeventos.data.repository.EventRepository
 import br.jfeventos.data.repository.EventRepositoryImpl
-import br.jfeventos.domain.repository.UserRepository
-import br.jfeventos.domain.usecase.UserRepositoryImpl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

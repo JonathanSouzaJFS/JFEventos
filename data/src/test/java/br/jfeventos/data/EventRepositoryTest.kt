@@ -25,7 +25,7 @@ class GistRepositoryTest {
     }
 
     @After
-    fun tearDown() {
+    fun finish() {
         unmockkAll()
     }
 
