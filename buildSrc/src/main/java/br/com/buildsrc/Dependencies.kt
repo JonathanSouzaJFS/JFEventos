@@ -17,8 +17,13 @@ object Version {
 
     //test
     const val jUnit = "4.13.1"
-    const val jUnitExt = "1.1.2"
+    const val robolectric = "4.4"
     const val espresso = "3.3.0"
+    const val mockk = "1.10.3-jdk8"
+    const val testCore = "1.3.0"
+    const val archTest = "2.1.0"
+    const val jUnitExt = "1.1.1"
+    const val truth = "1.1"
 }
 
 object Libs {
@@ -53,7 +58,14 @@ object Libs {
 
 object LibsTest{
     const val jUnit = "junit:junit:${Version.jUnit}"
+    const val robolectric = "org.robolectric:robolectric:${Version.robolectric}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Version.espresso}"
     const val espressoContrib = "androidx.test.espresso:espresso-contrib:${Version.espresso}"
+    const val mockk = "io.mockk:mockk:${Version.mockk}"
+    const val testCoreKtx = "androidx.test:core-ktx:${Version.testCore}"
+    const val koinTest = "org.koin:koin-test:${Version.koin}"
+    const val archTest = "androidx.arch.core:core-testing:${Version.archTest}"
+    const val coreKtx = "androidx.core:core-ktx:${Version.coreKtx}"
     const val jUnitExt = "androidx.test.ext:junit:${Version.jUnitExt}"
+    const val truth = "com.google.truth:truth:${Version.truth}"
 }
