@@ -6,9 +6,4 @@ dependencies {
     implementation Libs.navigationFragment
     implementation Libs.constraintLayout
     implementation Libs.picasso
-
-//    implementation project(Module.home)
-//    implementation project(Module.details)
-
-    //   testImplementation LibsTest.jUnit
 }

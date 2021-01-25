@@ -6,4 +6,12 @@ dependencies {
     implementation Libs.constraintLayout
     implementation Libs.material
     implementation project(Module.domain)
+
+    testImplementation project(Module.testUtils)
+    testImplementation LibsTest.jUnit
+    testImplementation LibsTest.mockito
+    testImplementation LibsTest.coroutinesTest
+    testImplementation LibsTest.jUnitExt
+    testImplementation LibsTest.archTest
+    testImplementation LibsTest.truth
 }

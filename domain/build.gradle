@@ -5,6 +5,12 @@ dependencies {
     implementation Libs.koin
     implementation Libs.retrofit
     implementation Libs.sharedPreference
-//    testImplementation project(Module.testUtils)
- //   testImplementation LibsTest.jUnit
+
+    testImplementation project(Module.testUtils)
+    testImplementation LibsTest.jUnit
+    testImplementation LibsTest.mockk
+    testImplementation LibsTest.coroutinesTest
+    testImplementation LibsTest.jUnitExt
+    testImplementation LibsTest.archTest
+    testImplementation LibsTest.truth
 }
