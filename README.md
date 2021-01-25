@@ -4,19 +4,26 @@
 
 <img src="https://firebasestorage.googleapis.com/v0/b/cep-rural.appspot.com/o/Captura%20de%20Tela%202021-01-25%20a%CC%80s%2010.15.29.png?alt=media&token=c2268682-fa2a-4bdb-8999-be80cf6a0a83" width="250"> <img src="https://firebasestorage.googleapis.com/v0/b/cep-rural.appspot.com/o/Captura%20de%20Tela%202021-01-25%20a%CC%80s%2010.16.05.png?alt=media&token=a15fa253-cf94-475b-8df0-f280fc0c4ba3" width="250"> <img src="https://firebasestorage.googleapis.com/v0/b/cep-rural.appspot.com/o/Captura%20de%20Tela%202021-01-25%20a%CC%80s%2010.16.15.png?alt=media&token=03bb62b3-4085-4ec7-8959-5988179b8344" width="250">
 
-#### Modularização
+### Modularização
 
-**app: **Faz a integração dos módulos e é onde fica a classe Application 
-**buildSrc: **Recebe todas as dependências da aplicação.
+**app:** Faz a integração dos módulos e é onde fica a classe Application 
+
+**buildSrc:** Recebe todas as dependências da aplicação.
+
 **common:** Recebe todos os arquivos que vão ser comum em outros módulos para evitar repetição de código
+
 **data:** Onde fica a parte da Api e Room
-**domain: **Onde fica a parte dos UserCases e Models
+
+**domain:** Onde fica a parte dos UserCases e Models
+
 **customViews:** Todos os componentes da aplicação
-**features: **Módulos onde cada squad ou membro da equipe deve trabalhar com novas funcionalidades, minimizando conflitos.
-**testUtils: **Classe de teste compartilhado para os módulos.
+
+**features:** Módulos onde cada squad ou membro da equipe deve trabalhar com novas funcionalidades, minimizando conflitos.
+
+**testUtils:** Classe de teste compartilhado para os módulos.
 
 
-#### Bibliotecas
+### Bibliotecas
 
 - DataBinding 
 - Navigation
@@ -29,7 +36,7 @@
 - LiveData 
 - *Requisito Android 4.1+
 
-#### Componentes
+### Componentes
 
 - ResumeEventView(title: String, price: BigDecimal): Componente que seta as informações resumidas do evento. Também pega as coordenadas de Lat e Long e converte no nome da Cidade e Estado.
 
