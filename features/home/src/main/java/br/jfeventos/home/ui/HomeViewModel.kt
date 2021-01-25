@@ -2,7 +2,7 @@ package br.jfeventos.home.ui
 
 import android.content.Context
 import androidx.lifecycle.liveData
-import br.com.jfeventos.ui.base.BaseViewModel
+import br.jfeventos.common.base.BaseViewModel
 import br.jfeventos.common.utils.NetworkResponse
 import br.jfeventos.common.utils.hasInternet
 import br.jfeventos.data.repository.EventRepository

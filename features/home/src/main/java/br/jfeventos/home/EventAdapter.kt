@@ -67,6 +67,4 @@ class EventAdapter(
 
     fun clearItems() = list.clear()
 
-    fun removeItem(event: Event) = list.remove(event)
-
 }
