@@ -16,5 +16,5 @@ dependencies {
     implementation project(Module.customViews)
     implementation project(Module.common)
 
-    //   testImplementation LibsTest.jUnit
+    testImplementation LibsTest.jUnit
 }
