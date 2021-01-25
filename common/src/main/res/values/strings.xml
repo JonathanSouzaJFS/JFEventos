@@ -13,4 +13,9 @@
     <string name="cancel">Cancelar</string>
     <string name="try_again">Tente Novamente!</string>
     <string name="sucess_title">Parabéns!</string>
+
+    <string name="checkin_label_sucess">CheckIn realizado com sucesso!</string>
+    <string name="indefined">Indefinido</string>
+    <string name="event_indefined">Evento Indisponivel</string>
+
 </resources>

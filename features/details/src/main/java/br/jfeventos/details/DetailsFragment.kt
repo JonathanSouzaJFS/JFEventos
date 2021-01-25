@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import br.jfeventos.common.R
 import br.jfeventos.common.utils.*
 import br.jfeventos.details.databinding.FragmentDetailsBinding
 import br.jfeventos.domain.model.CheckIn
@@ -34,7 +35,7 @@ class DetailsFragment : Fragment() {
         idEvent = arguments?.getLong("id")
 
         if (idEvent == null) {
-            showDialogError(requireContext(), "Evento indisponivel")
+            showDialogError(requireContext(), resources.getString(R.string.event_indefined))
             findNavController().popBackStack()
             return
         }
@@ -82,7 +83,7 @@ class DetailsFragment : Fragment() {
             it?.let { resource ->
                 when (resource) {
                     is NetworkResponse.Success -> {
-                        showDialogSucess(requireContext(), "CheckIn realizado com sucesso!")
+                        showDialogSucess(requireContext(), resources.getString(R.string.checkin_label_sucess))
                     }
                     is NetworkResponse.Error -> {
                         showDialogError(requireContext(), resource.exception)
@@ -103,7 +104,7 @@ class DetailsFragment : Fragment() {
         mBinding.eventLocaleView.bind(addresses[0].subAdminArea, addresses[0].adminArea)
         mBinding.eventInfoLocale.text = addresses[0].getAddressLine(0)
     } catch (ex: Exception) {
-        mBinding.eventInfoLocale.text = "Indefinido"
+        mBinding.eventInfoLocale.text = resources.getString(R.string.indefined)
     }
 
     private fun retrieveEvent(event: Event) {
