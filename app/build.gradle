@@ -8,13 +8,16 @@ android {
 }
 
 dependencies {
-
 //    implementation project(Module.gistList)
 //    implementation project(Module.detail)
 //    implementation project(Module.favorites)
-//    implementation project(Module.common)
+    implementation project(Module.common)
     implementation project(Module.domain)
     implementation project(Module.data)
+    implementation project(Module.home)
+    implementation project(Module.details)
+
+
 //    implementation project(Module.navigation)
 
     implementation Libs.kotlinStd
@@ -37,6 +40,8 @@ dependencies {
     implementation Libs.gsonConverter
     implementation Libs.navigationFragment
     implementation Libs.navigationKtx
+
+    implementation project(Module.customViews)
 
 
     testImplementation 'junit:junit:4.+'

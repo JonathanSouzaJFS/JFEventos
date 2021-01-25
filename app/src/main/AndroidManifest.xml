@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="br.com.jfeventos">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -16,7 +15,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute">
-        <activity android:name=".ui.MainActivity">
+        <activity android:name="br.jfeventos.common.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

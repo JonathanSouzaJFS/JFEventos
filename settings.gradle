@@ -1,3 +1,6 @@
+include ':features:details'
+include ':common'
+include ':features:home'
 include ':customViews'
 include ':testUtils'
 include ':features'

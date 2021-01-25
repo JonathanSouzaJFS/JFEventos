@@ -1,0 +1,10 @@
+<resources>
+    <style name="AlertDefaultButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/titleColor</item>
+        <item name="rippleColor">@color/titleColor</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="buttonBarButtonStyle">@style/AlertDefaultButtonStyle</item>
+    </style>
+</resources>

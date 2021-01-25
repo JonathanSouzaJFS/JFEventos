@@ -1,0 +1,20 @@
+apply plugin: 'com.android.library'
+apply from: '../../gradle_util/android-build.gradle'
+
+dependencies {
+    implementation Libs.koinViewModel
+    implementation Libs.retrofit
+    implementation Libs.swipeRefresh
+    implementation Libs.navigationFragment
+    implementation Libs.navigationKtx
+    implementation Libs.lifecycleLiveData
+    implementation Libs.constraintLayout
+    implementation Libs.picasso
+
+    implementation project(Module.data)
+    implementation project(Module.domain)
+    implementation project(Module.customViews)
+    implementation project(Module.common)
+
+    //   testImplementation LibsTest.jUnit
+}

@@ -5,10 +5,10 @@ object Module {
 //    const val navigation = ":navigation"
 //
 //    //features
-//    const val gistList = ":features:list"
-//    const val detail = ":features:detail"
+    const val home = ":features:home"
+    const val details = ":features:details"
 //    const val favorites = ":features:favorites"
-//    const val common = ":features:common"
+    const val common = ":common"
 //
 //    //test
 //    const val testUtils = ":testUtils"

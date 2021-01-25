@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+apply from: '../gradle_util/android-build.gradle'
+
+dependencies {
+    implementation Libs.navigationKtx
+    implementation Libs.navigationFragment
+    implementation Libs.constraintLayout
+    implementation Libs.picasso
+
+//    implementation project(Module.home)
+//    implementation project(Module.details)
+
+    //   testImplementation LibsTest.jUnit
+}
