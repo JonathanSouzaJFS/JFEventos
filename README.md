@@ -32,7 +32,7 @@
 - Retrofit 
 - Koin 
 - Picasso 
-- SharedProcedures 
+- SharedPreferences
 - LiveData 
 - *Requisito Android 4.1+
 
